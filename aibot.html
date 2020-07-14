@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <title>AI Bot</title>
+      <link rel="shortcut icon" href="profilePhoto.ico" />
+      <meta charset="UTF-8"/>
+      <meta name="description" content="This is Ben Gladiné's portfolio."/>
+      <meta name = "author" content = "Ben Gladiné"/>
+      <meta name = "keywords" content = "Portfolio, game developer, programmer"/>
+      <meta name= "viewport" content = "width = device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="navBar.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  </head>
+  <body>
+    <!-- navBar -->
+		<nav>
+			<div class="nav">
+			  <!-- pc container -->
+			  <div class="pcContainer">
+			  <!-- home and other links(icons) -->
+			    <div class="homeContainer">
+			      <a class="navLink" href="index.html#welcome" target="_self"><b>Ben Gladiné</b></a>
+			      <a href="mailto:gladine.ben@gmail.com"><img class="hoverImage icon" style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/mail.png"></a>
+			      <a href="http://www.linkedin.com/in/bengladine" target="_blank"><img class="hoverImage icon" style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/linkedin.png"></a>
+			    </div>
+
+			  <!-- pcNavMenu -->
+			    <a class="navLink pcNavMenu" href="index.html#projectsPage">PROJECTS</a>
+			    <a class="navLink pcNavMenu" href="index.html#skills" target="_self">SKILLS</a>
+			    <a class="navLink pcNavMenu" href="./Resources/Resume.pdf" target="_blank">RESUME</a>
+			    <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a>
+			    <a class= "navLink pcNavMenu" href="./helpJacques.html" target="_self">Codename: Help Jacques</a>
+			  </div>
+			  <!-- mobile nav-->
+			    <a id="bars" href="javascript:void(0);" class="bars">
+			      <img style="width: 50px;"src="./Resources/bars.png">
+			    </a>
+			</div>
+			  <div class ="mobile-nav">
+			    <a class= "navLink mobNavLink" href="index.html#welcome" target="_self">Home</a>
+			    <hr class="mobNavSeperator">
+			    <a class= "navLink mobNavLink" href="index.html#projectsPage" target="_self">Projects</a>
+			    <hr class="mobNavSeperator">
+			    <a class= "navLink mobNavLink" href="index.html#skills" target="_self">Skills</a>
+			    <hr class="mobNavSeperator">
+			    <a class= "navLink mobNavLink" href="./Resources/Resume.pdf" target="_blank">Resume</a>
+			    <hr class="mobNavSeperator">
+			    <a class= "navLink mobNavLink" href="./aboutme.html"  target="_self">About me</a>
+			    <hr class="mobNavSeperator">
+			    <a class= "navLink mobNavLink" href="./helpJacques.html"  target="_self">Codename: Help Jacques</a>
+			  </div>
+
+			<script type="text/javascript" src="mobMenu.js"></script>
+		</nav>
+    <div class="container">
+      <article>
+        <h1>The AI Bot in Elite Engine</h1>
+        <hr>
+        <h2>The goal</h2>
+        <p>The purpose of this project was to write AI-behavior for an agent that is dropped
+        in a premade world. The world consists of zombie-bots that chase the agent once the
+        agent comes to close. There are also med-kits that is used to heal the agent and coins
+        that will attribute to the overal score. Guns are layed out across to map too and can
+        be used to shoot and kill enemies.
+        </p>
+        <hr>
+        <h2>The process</h2>
+        <p>To write the behavior, I made usage of a Selective Behavior tree. By checking the most
+        important stats such as health and surroundings first, the AI always act in terms of safety
+        first.
+        </p>
+        <p>With the usage of a blackboard, I could save any type of data that the agent was receiving
+          (such as: what's in the FOV, what do I have in my inventory and so on) and use this info
+          in the Behavior actions and conditionals.
+        </p>
+        <p>Below there's a short video of how the AI acted.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bwFsLjqPp_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <hr>
+        <h2>Take aways</h2>
+        <p>A behavior tree is something that's quite flexible and easy to expand. It's not too hard to implement and gives
+        great results. The usage of the blackboard is something handy too and could be used with other
+        projects.</p>
+      </article>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <h4 style="font-family: Arial; color: grey; text-decoration: none; padding-left: 40px;">&copy; 2020 by Ben Gladiné</h4>
+    </div>
+  </body>
+</html>

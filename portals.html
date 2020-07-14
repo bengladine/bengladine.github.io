@@ -1,0 +1,95 @@
+htmlhtml<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <title>Portal in Overlord</title>
+      <link rel="shortcut icon" href="profilePhoto.ico" />
+      <meta charset="UTF-8"/>
+      <meta name="description" content="This is Ben Gladiné's portfolio."/>
+      <meta name = "author" content = "Ben Gladiné"/>
+      <meta name = "keywords" content = "Portfolio, game developer, programmer"/>
+      <meta name= "viewport" content = "width = device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="navBar.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  </head>
+  <body>
+    <!-- navBar -->
+    <nav>
+      <div class="nav">
+        <!-- pc container -->
+        <div class="pcContainer">
+        <!-- home and other links(icons) -->
+          <div class="homeContainer">
+            <a class="navLink" href="index.html#welcome" target="_self"><b>Ben Gladiné</b></a>
+            <a href="mailto:gladine.ben@gmail.com"><img class="hoverImage icon" style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/mail.png"></a>
+            <a href="http://www.linkedin.com/in/bengladine" target="_blank"><img class="hoverImage icon" style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/linkedin.png"></a>
+          </div>
+
+        <!-- pcNavMenu -->
+          <a class="navLink pcNavMenu" href="index.html#projectsPage">PROJECTS</a>
+          <a class="navLink pcNavMenu" href="index.html#skills" target="_self">SKILLS</a>
+          <a class="navLink pcNavMenu" href="./Resources/Resume.pdf" target="_blank">RESUME</a>
+          <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a>
+          <a class= "navLink pcNavMenu" href="./helpJacques.html" target="_self">Codename: Help Jacques</a>
+        </div>
+        <!-- mobile nav-->
+          <a id="bars" href="javascript:void(0);" class="bars">
+            <img style="width: 50px;"src="./Resources/bars.png">
+          </a>
+      </div>
+        <div class ="mobile-nav">
+          <a class= "navLink mobNavLink" href="index.html#welcome" target="_self">Home</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="index.html#projectsPage" target="_self">Projects</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="index.html#skills" target="_self">Skills</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="./Resources/Resume.pdf" target="_blank">Resume</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="./aboutme.html"  target="_self">About me</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="./helpJacques.html"  target="_self">Codename: Help Jacques</a>
+        </div>
+
+      <script type="text/javascript" src="mobMenu.js"></script>
+    </nav>
+    <div class="container">
+      <article>
+        <h1>Portal in the Overlord Engine</h1>
+        <hr>
+        <h2>The goal</h2>
+        <p>Recreating the portal effect in DAE's Overlord Engine. The goal was to understand
+          the renderingpipeline better and learn more about hlsl, but it turned out to be
+          more about understanding the Portal effect.
+        </p>
+        <hr>
+        <h2>The process</h2>
+        <p>Understanding how portals work is the first step before start typing the code.
+          We'll call the entrance portal P1 and the exit portal P2.
+          Both portals have a camera placed in the middle and are looking away from the wall/ceiling or floor they are placed upon.
+          These camera's make a snapshot every frame and the result is saved. The result from P1's camera will be placed on P2's
+          mesh as a texture and vice versa. Everything is drawn besides the portals, the snapshot is taken and after
+          that we draw the portals with their new texture. Other effects such as maintaining of momentum was also implemented.
+        </p>
+        <hr>
+        <h2>Conclusion</h2>
+        <p>The full effect is not fully implemented. Things like that the camera should rotate
+          along with the players' look direction or a good cutout of the snapshot that fits perfectly
+          on the portal. These are really the finishing touches that make portals look great and
+          realistic.
+        </p>
+        <p>  This was by far my least favourite project. The reason for this was because we were working
+          with DAE's custom engine. It's definitely not the same as working with Unity or Unreal Engine 4.
+          Memory leaks that happened on a irregular basis, no documentation and everything feels half finished.
+          It would be good, to finish the portals in another engine.
+        </p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/csOpuLjWeYg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </article>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <h4 style="font-family: Arial; color: grey; text-decoration: none; padding-left: 40px;">&copy; 2020 by Ben Gladiné</h4>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <title>2D Engine</title>
+      <link rel="shortcut icon" href="profilePhoto.ico" />
+      <meta charset="UTF-8"/>
+      <meta name="description" content="This is Ben Gladiné's portfolio."/>
+      <meta name = "author" content = "Ben Gladiné"/>
+      <meta name = "keywords" content = "Portfolio, game developer, programmer"/>
+      <meta name= "viewport" content = "width = device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="navBar.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  </head>
+  <body>
+    <!-- navBar -->
+    <nav>
+      <div class="nav">
+        <!-- pc container -->
+        <div class="pcContainer">
+        <!-- home and other links(icons) -->
+          <div class="homeContainer">
+            <a class="navLink" href="index.html#welcome" target="_self"><b>Ben Gladiné</b></a>
+            <a href="mailto:gladine.ben@gmail.com"><img class="hoverImage icon" style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/mail.png"></a>
+            <a href="http://www.linkedin.com/in/bengladine" target="_blank"><img class="hoverImage icon" style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/linkedin.png"></a>
+          </div>
+
+        <!-- pcNavMenu -->
+          <a class="navLink pcNavMenu" href="index.html#projectsPage">PROJECTS</a>
+          <a class="navLink pcNavMenu" href="index.html#skills" target="_self">SKILLS</a>
+          <a class="navLink pcNavMenu" href="./Resources/Resume.pdf" target="_blank">RESUME</a>
+          <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a>
+          <a class= "navLink pcNavMenu" href="./helpJacques.html" target="_self">Codename: Help Jacques</a>
+        </div>
+        <!-- mobile nav-->
+          <a id="bars" href="javascript:void(0);" class="bars">
+            <img style="width: 50px;"src="./Resources/bars.png">
+          </a>
+      </div>
+        <div class ="mobile-nav">
+          <a class= "navLink mobNavLink" href="index.html#welcome" target="_self">Home</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="index.html#projectsPage" target="_self">Projects</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="index.html#skills" target="_self">Skills</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="./Resources/Resume.pdf" target="_blank">Resume</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="./aboutme.html"  target="_self">About me</a>
+          <hr class="mobNavSeperator">
+          <a class= "navLink mobNavLink" href="./helpJacques.html"  target="_self">Codename: Help Jacques</a>
+        </div>
+
+      <script type="text/javascript" src="mobMenu.js"></script>
+    </nav>
+    <div class="container">
+      <article style="padding-top: 80px;">
+        <h1>2D Engine in C++</h1>
+        <hr>
+        <h2>The goal</h2>
+        <p>Creating a 2D engine and a small game to prove that it works. By using Open GL
+          as a graphics renderer and some Game Programming Patterns (Robert Nystrom), Pengo
+          an 80's arcade came to life.
+        </p>
+        <hr>
+        <h2>The process</h2>
+        <p>As mentioned above, Game Programming Patterns, a book written by Robery Nystrom, was
+        often the red wire through this project. The following patterns were implemented in the engine:</p>
+        <ul style="text-align: left; font-size: 20px;">
+          <li><b>Observer</b>: a seperate object that gets triggered once an event occurs, such as a kill.
+            Once triggered, it will execute a certain action.</li>
+          <li><b>State</b>: input will be handled seperately and depending on the current state the player
+            is in, it will return a new or the same state. If it's the same state, then nothing will
+             happen. If it's another state, an enter function will be called, changing for instance
+              the graphics of the character.</li>
+          <li><b>Component</b>: probably one of the most important patterns is this one. The component system
+          allows to completely seperate functionality of different domains from each other, without
+          them intervening. However one entity can still span over these multiple domains.</li>
+          <li><b>Update Method</b>: super simple, but super necessary. This pattern is about Game Objects having their
+          own Update function which will be called during the <u>gameloop</u>. In our case, this update
+          function will call the components' update function (components are attached to a Game Object). Objects
+          get a 'Destroyed' tag, so that an update won't be executed during that frame. </li>
+          <li><b>Game Loop</b>: probably found in every game. A game loop processes the input of the player, it updates all Objects
+          in the scene and it renders what's needed to come on the screen. This gameloop, makes sure the game runs at a consistent
+          framerate or it makes sure that on an slower computer, the same amount of stuff happens in the
+          same amount of real time. What I added as well is when there is time left (that means a loop went faster than the max frame-time), rather
+          than sleeping, objects that are destroyed will be deleted in memory.</li>
+        </ul>
+        <p>Other things added is the A* algorithm, but simplified. This algorithm is used for the enemy to travel towards its prey.
+        Also the maze is procedurally generated by using the Prim's algorithm.</p>
+        <img style="max-width: 100%;" src="./Resources/Engine/Codesnippet_1.png">
+        <hr>
+        <h2>Conclusion and take aways</h2>
+        <p>This was probably one of the better projects in order to understand engine design and get a better grasp on C++.
+        By making the game I got to know two new algorithms which I never implemented before. </p>
+      </article>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <h4 style="font-family: Arial; color: grey; text-decoration: none; padding-left: 40px;">&copy; 2020 by Ben Gladiné</h4>
+    </div>
+  </body>
+</html>
