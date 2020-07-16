@@ -7,6 +7,9 @@ var isMobNavOpen = false;
 
 window.addEventListener("resize", checkSize);
 window.addEventListener("load", checkSize);
+window.addEventListener("DOMContentLoaded", checkSize);
+
+
 window.addEventListener("click", outsideClick);
 bars.addEventListener("click", clickOnMobNav);
 
