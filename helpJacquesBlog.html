@@ -51,51 +51,97 @@
           <hr class="mobNavSeperator">
           <a class= "navLink mobNavLink" href="./helpJacques.html"  target="_self">Codename: Help Jacques</a>
         </div>
-
-      <script type="text/javascript" src="mobMenu.js"></script>
+    <script type="text/javascript" src="mobMenu.js"></script>
     </nav>
     <div class="container" style= "padding-top:110px; padding-bottom: 20px;">
-    <article>
-        <h1>Codename: Help Jacques</h1>
-        <h2>What is Help Jacques?</h2>
-        <p>Help Jacques is a personal <b>side project</b>, currently being made by myself.
-          It's a <b>Serious Game</b> that is meant to be played by children at school around the age 12-16 years old,
-          though it can be played by anyone. The goal of the game is that when played, the player learns about the main events
-          that led to the <b>French Revolution</b> and all its consequences.
-        </p>
-        <h2>How will it be played?</h2>
-        <p>The genre for this game will be <b>Point-to-Click-Adventure</b>.
-            Famous examples of this are: 'Monkey Island', 'Grim Fandago', 'Indiana Jones and the Fate of Atlantis' and 'A New Beginning'.
-            Below you can see a gameplay video of Monkey Island.
-        </p>
-        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/FpIUxjGfkXg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <article style="max-width: 60%">
+        <h1>Blog: Help Jacques</h1>
+        <h2>Chapter 1: The Tools</h2>
         <p>
-            The game is meant to be played on a <b>mobile phone or tablet</b>, since computers are not always evident to be present at
-            an average family home. The user navigates on a 2D image by pressing anywhere on the screen. The character will then move
-            to that position or to the closest possible point.
-            Items that are necessary for the story can be picked up by pressing on them. The character will then navigate towards the object and
-            pick it up if possible.
+            When creating a game from scratch, you can't just go in, place a character in an environment and
+            let it move and react the way you want to. First you must determine how the character will be able to move and how
+            he is restricted. In our case, the character is moving on a 2D plane, restricted by obstacles and the possible walk area.
+            To easily define these areas and obstacles, a tool to create polygons on top of an image will be useful.
+            To get some inspiration on how to work with the Unity Editor properly, I looked at <a href="https://www.youtube.com/watch?v=saAQNRSYU9k" target="_blank"><u>Sebastian Lague's Path creator tool.</u></a>.
+            Below you can see the result:
         </p>
-        <h2>The Story</h2>
+        <div class="container">
+            <img class="image" src="./Resources/helpJacques/PolygonTool.gif">
+            <i>image: Autumn farm by Dominic Davison</i>
+        </div>
         <p>
-            Story is the most important in this game, since we want to achieve that the player learns about the French Revolution.
-            I believe that we can remember stories the best when the experience is great. A movie is unforgettable with characters
-            that you connect with. Things must happen that makes you feel for them. Therefore, a good script and some fine voice-acting
-            will be in place here.
+            With the following code:
         </p>
+        <pre>
+            <code class="scrollBox">private void Input()
+{
+    Event guiEvent = Event.current;
+    Vector2 mousePos = HandleUtility.GUIPointToWorldRay(guiEvent.mousePosition).origin;
+    // adding points
+    if (guiEvent.type == EventType.MouseDown && guiEvent.button == 0 && guiEvent.shift)
+    {
+        if (selectedSegmentIndex != -1)
+        {
+            Undo.RecordObject(_polygonCreator, "Split Point");
+            _polygonCreator.SplitSegment(mousePos, selectedSegmentIndex);
+        }
+        else
+        {
+            Undo.RecordObject(_polygonCreator, "Add Point");
+            _points.Add(mousePos);
+        }
+    }
+}
+// deleting points on segment
+  if (guiEvent.type == EventType.MouseDown && guiEvent.button == 1)
+  {
+      int idxClosestAnchor = -1;
+      float closestDst = _segmentSelectDistanceThreshold;
+      for (int i = 0; i < _points.Count; i++)
+      {
+          float dst = Vector2.Distance(mousePos, _points[i]);
+          if (dst < closestDst)
+          {
+              closestDst = dst;
+              idxClosestAnchor = i;
+          }
+      }
+
+      if (idxClosestAnchor != -1)
+      {
+          Undo.RecordObject(_polygonCreator, "Delete Point");
+          _polygonCreator.DeletePoint(idxClosestAnchor);
+      }
+  }
+
+  // inserting points on a segment
+
+  if (guiEvent.type == EventType.MouseMove)
+  {
+      float minDstToSegment = _segmentSelectDistanceThreshold;
+      int newSelectedSegmentIdx = -1;
+
+      for (int i = 0; i < _points.Count; i++)
+      {
+          float currentClstDst = HandleUtility.DistancePointToLineSegment(mousePos, _points[i], _points[Helpers.ClampListIndex(i + 1, _points.Count)]);
+          if (currentClstDst < minDstToSegment)
+          {
+              minDstToSegment = currentClstDst;
+              newSelectedSegmentIdx = i;
+          }
+      }
+
+      if (newSelectedSegmentIdx != selectedSegmentIndex)
+      {
+          selectedSegmentIndex = newSelectedSegmentIdx;
+          HandleUtility.Repaint();
+      }
+  }        </code>
+        </pre>
         <p>
-            Jacques will be the main-character you will play as. Jacques is a farmer, who has a wife and a recently born daughter.
-            Yet, he as everyone else is struggling to pay his taxes. The state threatens to take his property if he cannot pay his due.
-            One day Monique, Jacques' wife, asks him to go fetch some bread at the market. This is where he meets his local baker, Luc.
-            He soons discovers that Luc has raised his prices. Luc mentions that King Louis has summoned the Estates-General and asks
-            Jacques to join him for the gathering by sneaking in. It's from here that things will get interesting...
+            The next tool needed was a GPS. More coming soon.
         </p>
-        <h2>The Process of creating a game</h2>
-        <p>Since I have a fulltime job and work on Saturdays as well, progress can only be made with time in between.
-        Therefore, it's possible that it will take quite some time for one feature to be implemented. All progress that will be made though,
-        will be posted on a blog. Click <a href="helpJacquesBlog.html"><b><u>here</u></b></a> to view that blog!
-        </p>
-    </article>
+        </article>
     </div>
     <!-- Footer -->
     <div class="footer">
