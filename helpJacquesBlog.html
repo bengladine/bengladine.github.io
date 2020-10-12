@@ -145,7 +145,21 @@
             For this purpose, I used the A* algorithm. With every concave vertex of the walkable area being a node and every non-concave
             vertex of the obstacles being a node as well, a graph was made. On the following picture you can see the red points that signify a node.
         </p>
-        <img src="./Resources/helpJacques/nodes2.png" alt="Picture of nodes.">
+        <img class="image" src="./Resources/helpJacques/nodes2.png" alt="Picture of nodes.">
+        <p>After that, two more nodes were added, namely: the character's beginning position and its destination.
+            Then we leave it to the A* algorithm to do the work. I followed <a href="https://youtu.be/icZj67PTFhc" alt="A* tutorial"><u>javidx9's tutorial</u></a>
+            to implement this and made a few changes here and there to convert it to C#. What it comes down to is the following:
+            For every node, you check if another node is in its line of sight. If so, you add that node as its neighbour. Finally,
+            start from the startnode and go through the neighbours to reach the endnode. Once you've reached the endnode, you have a path!
+            Below you can see the result:
+        </p>
+        <div class="container">
+            <img class="image" src="./Resources/helpJacques/pathfinding.gif" alt="Image of pathfinding">
+            <i>A* Pathfinding, the dark blue line represents the path. The cyan lines are drawn to the nodes that are
+            in line of sight of the starting position(node). At the end of the gif, those same lines are drawn, but for
+            the ending position (node).
+            </i>
+        </div>
         <p>More coming soon</p>
         </article>
     </div>
