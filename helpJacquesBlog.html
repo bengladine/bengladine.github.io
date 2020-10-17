@@ -140,32 +140,41 @@
   }</code>
 </pre>
 </div>
-        <p>
-            The next tool needed was a GPS. We need Jacques to navigate through the scene along the shortest path possible.
-            For this purpose, I used the A* algorithm. With every concave vertex of the walkable area being a node and every non-concave
-            vertex of the obstacles being a node as well, a graph was made. On the following picture you can see the red points that signify a node.
-        </p>
-        <img class="image" src="./Resources/helpJacques/nodes2.png" alt="Picture of nodes.">
-        <p>After that, two more nodes were added, namely: the character's beginning position and its destination.
-            Then we leave it to the A* algorithm to do the work. I followed <a href="https://youtu.be/icZj67PTFhc" alt="A* tutorial"><u>javidx9's tutorial</u></a>
-            to implement this and made a few changes here and there to convert it to C#. What it comes down to is the following:
-            For every node, you check if another node is in its line of sight. If so, you add that node as its neighbour. Finally,
-            start from the startnode and go through the neighbours to reach the endnode. Once you've reached the endnode, you have a path!
-            Below you can see the result:
-        </p>
-        <div class="container">
-            <img class="image" src="./Resources/helpJacques/pathfinding.gif" alt="Image of pathfinding">
-            <i>A* Pathfinding, the dark blue line represents the path. The cyan lines are drawn to the nodes that are
-            in line of sight of the starting position(node). At the end of the gif, those same lines are drawn, but for
-            the ending position (node).
-            </i>
-        </div>
-        <p>More coming soon</p>
-        </article>
-    </div>
-    <!-- Footer -->
-    <div class="footer">
-      <h4 style="font-family: Arial; color: grey; text-decoration: none; padding-left: 40px;">&copy; 2020 by Ben Gladiné</h4>
-    </div>
-  </body>
+<p>The next tool needed was a GPS. We need Jacques to navigate through the scene along the shortest path possible.
+    For this purpose, I used the A* algorithm. With every concave vertex of the walkable area being a node and every non-concave
+    vertex of the obstacles being a node as well, a graph was made. On the following picture you can see the red points that signify a node.
+</p>
+<img class="image" src="./Resources/helpJacques/nodes2.png" alt="Picture of nodes.">
+<p>After that, two more nodes were added, namely: the character's beginning position and its destination.
+    Then we leave it to the A* algorithm to do the work. I followed <a href="https://youtu.be/icZj67PTFhc" target ="_blank" alt="A* tutorial"><u>javidx9's tutorial</u></a>
+    to implement this and made a few changes here and there to convert it to C#. What it comes down to is the following:
+    For every node, you check if another node is in its line of sight. If so, you add that node as its neighbour. Finally,
+    start from the startnode and go through the neighbours to reach the endnode. Once you've reached the endnode, you have a path!
+    Below you can see the result:</p>
+<div class="container">
+    <img class="image" src="./Resources/helpJacques/pathfinding.gif" alt="Image of pathfinding">
+    <i>A* Pathfinding, the dark blue line represents the path. The cyan lines are drawn to the nodes that are
+    in line of sight of the starting position(node). At the end of the gif, those same lines are drawn, but for
+    the ending position (node).</i>
+</div>
+<p>Now one more thing remains: depth! Most backgrounds during gameplay will have Jacques walk along different paths. These paths
+could lead up to a house in the distance or to shed in the front. Front and back is determined by the perspective on the 2D picture.
+But how do we make the character move like he is far away?</p>
+<p>Well, <u><a href="http://www.groebelsloot.com/2017/01/16/scaling-actors/" target="_blank">Groebelsloot</a></u> has an answer for that. What he does is the following:
+by drawing a polygon over the image, filled with a gradient from opaque to transparent, we can use the alpha value to create a distance factor.
+This factor we can use to multiply the speed and scale of our character with. Is the character on a more transparent location of the polygon, then
+the character will walk more slowly and be smaller too. Is the character on a more opaque location, then the character will walk faster and be bigger too.
+Of course, this will not be super-realistic, but it's a 2D video-game, it will do the job for us. Below you can see how that looks like, for now the character
+is still a pink sphere. That will be changed in the future!</p>
+<div class="container">
+    <img class="image" src="./Resources/helpJacques/depth.gif" alt="Gif showcasing scaling and speed change depending on alpha value">
+    <i>Depending where the character is located on the red gradient coloured polygon, the character will change in speed and size.</i>
+</div>
+</article>
+</div>
+<!-- Footer -->
+<div class="footer">
+ <h4 style="font-family: Arial; color: grey; text-decoration: none; padding-left: 40px;">&copy; 2020 by Ben Gladiné</h4>
+</div>
+</body>
 </html>
