@@ -1,226 +1,82 @@
-<!-- Website made by Ben Gladiné -->
 <!DOCTYPE html>
-<html>
-	<head>
-			<title>Ben Gladiné's Portfolio</title>
-			<link rel="shortcut icon" href="profilePhoto.ico" />
-			<meta charset="UTF-8"/>
-			<meta name="description" content="This is Ben Gladiné's portfolio."/>
-			<meta name = "author" content = "Ben Gladiné"/>
-			<meta name = "keywords" content = "Portfolio, game developer, programmer"/>
-			<meta name= "viewport" content = "width = device-width, initial-scale=1.0"/>
-			<link rel="stylesheet" href="style.css" />
-			<link rel="stylesheet" href="navBar.css" />
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-		 <!-- smooth scroll -->
-		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		 <script>
-		 $(document).ready(function(){
-		   // Add smooth scrolling to all links
-		   $("a").on('click', function(event) {
+<html lang="en">
 
-		     // Make sure this.hash has a value before overriding default behavior
-		     if (this.hash !== "") {
-		       // Prevent default anchor click behavior
-		       event.preventDefault();
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newStyle.css" />
+    <title>Ben Gladiné</title>
+</head>
+<script type="text/javascript" src="app.js"></script>
+<body>
+    <div class="container hidden">
+        <h1>My Profile</h1>
+        <p>Hi there! I'm Ben Gladiné, a professional Game Developer,
+            specialized in Designing and Developing interactive applications.</p>
+    </div>
+    <div class="container hidden">
+        <h1>About me</h1>
+        <p>After completing my teacher study back in 2017 and being in the field for not too long,
+            I had this itch of becoming a Game Developer that I wanted to pursue.
+            I signed up for Digital Arts and Entertainment at Kortrijk, Belgium. Known for being the best Game
+            Developing school in the world.
+            Completing that in 2020, I've been in the Game Developer world ever since. Mostly spending my time in
+            Unity C#. </p>
+    </div>
+    <div class="container hidden">
+        <h1>Skills</h1>
+        <table>
+            <tr class="hidden">
+                <th>Engine</th>
+                <th>Languages</th>
+                <th>Software</th>
+                <th>Fields</th>
+            </tr>
+            <tr class="hidden">
+                <td>Unity</td>
+                <td>C#</td>
+                <td>Visual Studio</td>
+                <td>Gameplay Developer</td>
+            </tr>
+            <tr class="hidden">
+                <td>Unreal Engine</td>
+                <td>C++</td>
+                <td>Git</td>
+                <td>Game Designer</td>
+            </tr>
+            <tr class="hidden">
+                <td></td>
+                <td>HTML, JS, CSS</td>
+                <td>Reaper DAW</td>
+                <td>Audio engineer</td>
+            </tr>
+            <tr class="hidden">
+                <td></td>
+                <td></td>
+                <td>Jira</td>
+                <td></td>
+            </tr>
+            <tr class="hidden">
+                <td></td>
+                <td></td>
+                <td>Photoshop & Vegas</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="container hidden">
+        <h1>My Projects</h1>
+        <div class="project">
+            Interstellar Ella
+        </div>
+        <div class="project">
+            Transfr VR Learning
+        </div>
+        <div class="project">
+            Other
+        </div>
+    </div>
 
-		       // Store hash
-		       var hash = this.hash;
-					 var targetOffset = $(hash).offset().top - 70;
-		       // Using jQuery's animate() method to add smooth page scroll
-		       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-		       $('html, body').animate({
-		         scrollTop: targetOffset
-		       }, 800, function(){
+</body>
 
-		         // Add hash (#) to URL when done scrolling (default click behavior)
-		       });
-		     } // End if
-		   });
-		 });
-		 </script>
-
-	</head>
-	<body>
-		<!-- navBar -->
-		<nav>
-			<div class="nav">
-			  <!-- pc container -->
-			  <div class="pcContainer">
-			  <!-- home and other links(icons) -->
-			    <div class="homeContainer">
-			      <a class="navLink" href="index.html#welcome" target="_self"><b>Ben Gladiné</b></a>
-			      <a href="mailto:gladine.ben@gmail.com"><img class="hoverImage icon" style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/mail.png"></a>
-			      <a href="http://www.linkedin.com/in/bengladine" target="_blank"><img class="hoverImage icon" style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/linkedin.png"></a>
-			    </div>
-
-			  <!-- pcNavMenu -->
-				<a class="navLink pcNavMenu" href="index.html#projectsPage">PROJECTS</a>
-        <a class="navLink pcNavMenu" href="index.html#skills" target="_self">SKILLS</a>
-        <a class="navLink pcNavMenu" href="./Resources/Resume.pdf" target="_blank">RESUME</a>
-        <!-- <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a> -->
-			    <a class= "navLink pcNavMenu" href="./helpJacques.html" target="_self">CODENAME: Help Jacques</a>
-			  </div>
-			  <!-- mobile nav-->
-			    <a id="bars" href="javascript:void(0);" class="bars">
-			      <img style="width: 50px;"src="./Resources/bars.png">
-			    </a>
-			</div>
-			<div class="mobile-nav">
-				<a class="navLink mobNavLink" href="index.html#welcome" target="_self">Home</a>
-				<hr class="mobNavSeperator">
-				<a class="navLink mobNavLink" href="index.html#projectsPage" target="_self">Projects</a>
-				<hr class="mobNavSeperator">
-				<a class="navLink mobNavLink" href="index.html#skills" target="_self">Skills</a>
-				<hr class="mobNavSeperator">
-				<a class="navLink mobNavLink" href="./Resources/Resume.pdf" target="_blank">Resume</a>
-				<hr class="mobNavSeperator">
-				<!-- </ <a class= "navLink mobNavLink" href="./aboutme.html"  target="_self">About me</a>
-	 <hr class="mobNavSeperator"> -->
-				<a class="navLink mobNavLink" href="./helpJacques.html" target="_self">Codename: Help Jacques</a>
-			</div>
-
-			<script type="text/javascript" src="mobMenu.js"></script>
-		</nav>
-		<article id="welcome">
-			<img id="welcomeImage" src="./Resources/me.png">
-			<div id="welcomeMessage">
-				<h1 style="text-decoration: underline; text-underline-offset: 10px; ">Greetings Reader</h1>
-				<p>I'm Ben Gladiné and welcome to my website. I'm 27 years old and I have a bachelor
-					in <b>Teacher Mathematics and Physics for secondary school</b> and a bachelor in
-					<b>Game Development</b>. What I offer is a wide variety of skills and an active
-					participative attitude. For details regarding experience, I refer you to the
-					<a href="#projectsPage" alt="./index.html"><b><u>projects section</b></u></a>.
-					More info regarding my background, don't hesitate to contact me! <!--'have a look over <a target="_self" href="aboutme.html"><b><u>here</u></b></a>.-->
-					<br><br>
-					Thanks for visiting and perhaps see you soon.
-					<br><br>
-					Ben Gladiné
-				</p>
-			</div>
-		</article>
-		<hr>
-		<div id="projectsPage" class="container">
-			<h1 class="tab" >Projects</h1>
-			<h2>Ongoing projects<hr class="titleLine"></h2>
-			<div class="projectSection">
-				<div class="project">
-					<h3>Serious game: Help Jacques</h3>
-					<a href="helpJacques.html" ><img class="hoverImage projectImage" src="./Resources/helpJacques.png" alt="Sorry, could not load image." /></a>
-				</div>
-			</div>
-			<h2>Research & Development<hr class="titleLine"></h2>
-			<div class="projectSection">
-				<div = class="project">
-					<h3>Research on Plantgrowth @Aeroplane</h3>
-					<a href="aeroplane.html" ><img class="hoverImage projectImage" src="./Resources/ResearchAtAeroplane.png" alt="Sorry, could not load image." /></a>
-				</div>
-			</div>
-			<h2>Coding Projects<hr class="titleLine"></h2>
-			<div class="projectSection" style="align-items: center;">
-				<div class="project" style="align-self: center;">
-					<h3>Hit The Tower</h3>
-					<a href="hitTheTower.html"><img class="hoverImage projectImage" src="./Resources/HitTheTower_1.png" alt="Sorry, could not load image." /></a>
-				</div>
-				<div class="project">
-					<h3>2D engine</h3>
-					<a href="minigin.html"><img class="hoverImage projectImage" src="./Resources/2D_Engine.png" alt="Sorry, could not load image."/></a>
-				</div>
-				<div class="project">
-					<h3>AI BOT</h3>
-					<a href="aibot.html"><img class="hoverImage projectImage" src="./Resources/AI_Bot_2.png" alt="Sorry, could not load image."/></a>
-				</div>
-				<div class="project">
-					<h3>Portal effect</h3>
-					<a href="portals.html"><img class="hoverImage projectImage" src="./Resources/Portal/portalEffect.png" alt="Picture of portal effect."/></a>
-				</div>
-			</div>
-			<h2>Art Projects<hr class="titleLine"></h2>
-			<div class ="projectSection">
-				<div class="project">
-					<h3>Creating a simple level</h3>
-					<a href="level.html"><img class="hoverImage projectImage" src="./Resources/LevelEditing/LevelEditing_Main.png" alt="Picture of level."/></a>
-				</div>
-				<div class="project">
-					<h3>Optimizing, texturing and rigging a premade model</h3>
-					<a href="robot.html"><img class="hoverImage projectImage" src="./Resources/Robot_Main.png" alt="Picture of textured robot."/></a>
-				</div>
-			</div>
-			<h2>Other<hr class="titleLine"></h2>
-			<div class="projectSection">
-				<div class="project">
-					<h3>Recording and adapting Foley sounds</h3>
-					<a href="foley.html"><img class="hoverImage projectImage" src="./Resources/foley_Mic.jpg" alt="Picture foley mic, Neumann KM-184."/></a>
-				</div>
-			</div>
-		</div>
-		<br>
-		<hr>
-		<div id="skills">
-			<h1 class="tab skillsContainer">Skills</h1>
-			<!-- Hard Skills -->
-			<h2 style="text-align:center; color: #eceee3;">Languages</h2>
-			<div id="skillsTab">
-				<div >
-					<h3  style="color: #eceee3;">Computer Languages<hr style="color: #eceee3; max-width: 80%;"></h3>
-						<div id="setSkills">
-								<div class="skillResult">
-									<h4 style="color: #eceee3;">C++</h4>
-									<h4>Good</h4>
-								</div>
-								<div class="skillResult">
-									<h4 style="color: #eceee3;">C#</h4>
-									<h4>Good</h4>
-								</div>
-								<div class="skillResult">
-									<h4 style="color: #eceee3;">HTML/CSS/JS</h4>
-									<h4>Novice</h4>
-								</div>
-						</div>
-				</div>
-				<div >
-					<h3 style="color: #eceee3;">Human Languages<hr style="color: #eceee3; max-width: 80%;"></h3>
-						<div id="setSkills">
-							<div class="skillResult">
-								<h4 style="color: #eceee3;">Dutch</h4>
-								<h4>Native</h4>
-							</div>
-							<div class="skillResult">
-								<h4 style="color: #eceee3;">English</h4>
-								<h4>Fluent</h4>
-							</div>
-							<div class="skillResult">
-								<h4 style="color: #eceee3;">French</h4>
-								<h4>Mediocre</h4>
-							</div>
-						</div>
-				</div>
-			</div>
-			<!-- Soft Skills -->
-			<h2 style="text-align:center; color: #eceee3;">Competences</h2>
-			<div id="skillsTab">
-				<h4>Flexible</h4>
-				<h4>Social</h4>
-				<h4>Eager to learn</h4>
-				<h4>Enthousiastic</h4>
-				<h4>Adaptive</h4>
-			</div>
-		</div>
-		<br>
-		<hr>
-		<div id="contact">
-			<h1 class="tab" >Contact</h2>
-			<div class="contactContainer">
-				<a href="mailto:gladine.ben@gmail.com"><img style="width: 100px;" class="icon" src="./Resources/mail.png"></a>
-				<a href="http://www.linkedin.com/in/bengladine" target="_blank"><img style="width: 100px;" class="icon" src="./Resources/linkedin.png"></a>
-			</div>
-		</div>
-		<br>
-		<hr>
-		<!-- Footer -->
-		<div class="footer">
-			<h4 style="font-family: Arial; color: grey; text-decoration: none; padding-left: 40px;">&copy; 2020 by Ben Gladiné</h4>
-		</div>
-	</body>
 </html>
