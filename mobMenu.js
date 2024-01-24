@@ -48,7 +48,7 @@ function clickOnMobNav()
 }
 
 function openMobNav() {
-    bars.style.background = "#48b2a7";
+    bars.style.background = "#000000";
     mobileNav.style.display = "flex";
     isMobNavOpen = true;
   }
