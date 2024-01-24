@@ -8,21 +8,22 @@
 /* cheatsheat: jonibologna.com/content/images/flexboxsheet.pdf */
 :root
 {
-  background-color: #0D171A;
-  color: #B8BAAD;
+  background-color:whitesmoke;
+  color: #252525;
 }
 
 :root h1,h2,h3,h4, a{
-  font-family: "Source Sans Pro";
+  font-family: "Montserrat";
+  color: #161616;
 }
 
 :root h1, h2{
-  text-shadow: 5px 3px 1px #184A45;
-  color: #eceee3;
+  text-shadow: 2px 1px 1px #919191;
+  color: #161616;
 }
 
 :root p{
-  font-family: "Roboto";
+  font-family: "Montserrat";
 }
 
 .tab{
@@ -87,7 +88,7 @@
 
 .links
 {
-  color:orange;
+  color:rgb(255, 166, 0);
 }
 
 .image
@@ -136,6 +137,75 @@
   max-width: 300px;
 }
 
+.projectSection .project ul {
+  text-align: left;
+  list-style-type: disc; /* or your preferred list style */
+  padding-left: 20px; /* Adjust as needed */
+  margin-left: 10; /* Ensures the list starts at the edge of the container */
+  display: block; /* Resets any flex or inline styles */
+  width: 100%;
+}
+
+.projectSection .project ul li {
+  text-align: left;
+  margin-left: 5px;
+  padding-bottom: 3px;
+  font-size: medium;
+  font-family: "Montserrat";
+  color:rgb(0, 0, 0);
+}
+
+ul{
+  text-align: left;
+  font-size: 20px;
+  margin-left: 0px;
+  padding-bottom: 3px;
+  color:rgb(0, 0, 0);
+}
+
+.projectSection .project li{
+  margin-right: 30px;
+}
+
+
+
+.projectSection .project .listing{
+  width: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  border: #ccc;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  text-wrap:balance;
+  overflow: hidden;
+}
+
+.projectSection .project .listing b{
+  color: white;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: #ccc;
+  border-style: solid;
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
+  border-width: 2px;
+  width: 100%;
+  float:left;
+  background-color:#184A45;
+  overflow: hidden;
+}
+
+.projectSection .project p{
+  color: #272727;
+  font-style: italic;
+  font-family: "Montserrat";
+  font: bold;
+}
+
 .recordingBox
 {
   display: -webkit-box;
@@ -162,6 +232,11 @@
 .projectImage{
   border-radius: 5%;
   border: 3px dotted #1A4C50;
+  max-height: 300px;
+}
+
+.projectImage:hover{
+  border-radius: 30%;
 }
 
 .hoverImage:hover{
@@ -219,38 +294,48 @@ article p{
 #welcome {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: block;
+  overflow: hidden;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse;
-  margin-top: 70px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-left: 5%;
+  margin-top: 100px;
+  margin-bottom: 100px;
   line-height: 1.6;
-  max-width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content:flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+          
+
+}
+
+#welcomeImageContainer {
+  float: left;
+  max-width: 30%;
+  padding: 25px; /* This padding will act as the space around your image */
+  shape-outside: circle(50%);
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* You might need to adjust this */
 }
 
 #welcomeImage{
-  float: left;
-  max-width: 15%;
-  max-height: 15%;
+  width: 100%;
   border-radius: 50%;
-  margin: 0 30px 0 30px;
-  min-width: 200px;
-  border: 2px solid #eceee3;
+  border: 5px double #000000;
 }
 
 #welcomeMessage{
+  max-width: 100%;
   text-align: left;
-  min-width: 300px;
-  max-width: 700px;
 }
 
 #welcomeMessage p{
@@ -467,10 +552,10 @@ article p{
   padding: 10px 0px 10px 0px;
   margin: 0;
   left: 0;
-  border-top: 7px groove #184A45;
+  border-top: 7px double #000000;
   border-top-left-radius: 30%;
   border-top-right-radius: 30%;
-  background: #0D171A;
+  background: whitesmoke;
 }
 
 pre code{
