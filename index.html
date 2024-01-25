@@ -50,7 +50,7 @@
 <body>
 	<!-- navBar -->
 	<nav>
-		<div class="nav">
+		<div id="navBar" class="nav navHidden">
 			<!-- pc container -->
 			<div class="pcContainer">
 				<!-- home and other links(icons) -->
@@ -74,7 +74,7 @@
 				<img style="width: 50px;" src="./Resources/bars.png">
 			</a>
 		</div>
-		<div class="mobile-nav">
+		<div id="mobileNavBar" class="mobile-nav navHidden">
 			<a class="navLink mobNavLink" href="index.html#welcome" target="_self">Home</a>
 			<hr class="mobNavSeperator">
 			<a class="navLink mobNavLink" href="index.html#projectsPage" target="_self">Projects</a>
@@ -107,7 +107,7 @@
 		</div>
 	</article>
 	<hr>
-	<div class="hidden">
+	<div id="aboutMe" class="hidden">
 		<h1 class="tab">About me</h1>
 		<div class="container">
 			<article>
@@ -219,7 +219,7 @@
 		</h2>
 		<div class="projectSection hidden">
 			<div class="project hidden">
-				<h3>Interstellar Ella: Maggie's Planet Guide</h3>
+				<h3>Interstellar Ella:<br> Maggie's Planet Guide</h3>
 				<a href="intella.html"><img class="hoverImage projectImage" src="./Resources/intella.jpg"
 						alt="Sorry, could not load image." /></a>
 				<p style="text-align: center;">Explore different planets and gather their data!</p>
@@ -426,6 +426,14 @@
 			<hr>Inspired by Joeb Rogers
 		</h4>
 	</div>
+
+	<script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.scrollTo(0, 50);
+            }, 0);
+        };
+    </script>
 </body>
 
 </html>

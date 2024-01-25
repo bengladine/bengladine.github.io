@@ -18,31 +18,31 @@
 <body>
     <!-- navBar -->
     <nav>
-        <div class="nav">
+        <div id="navBar" class="nav">
             <!-- pc container -->
             <div class="pcContainer">
                 <!-- home and other links(icons) -->
                 <div class="homeContainer">
-                    <a class="navLink" href="index.html#welcome" target="_self"><b>Ben Gladiné</b></a>
+                    <a class="navLink" href="index.html#welcome" target="_self">HOME</a>
                     <a href="mailto:gladine.ben@gmail.com"><img class="hoverImage icon"
-                            style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/mail.png"></a>
+                            style="max-width: 50px; float: right;" src="./Resources/mail.png"></a>
                     <a href="http://www.linkedin.com/in/bengladine" target="_blank"><img class="hoverImage icon"
-                            style="background: #1A4C50 ;max-width: 50px; float: right;"
-                            src="./Resources/linkedin.png"></a>
+                            style="max-width: 50px; float: right;" src="./Resources/linkedin.png"></a>
                 </div>
 
                 <!-- pcNavMenu -->
                 <a class="navLink pcNavMenu" href="index.html#projectsPage">PROJECTS</a>
                 <a class="navLink pcNavMenu" href="index.html#skills" target="_self">SKILLS</a>
                 <a class="navLink pcNavMenu" href="./Resources/Resume.pdf" target="_blank">RESUME</a>
-                <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a>
+                <!-- <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a> -->
+
             </div>
             <!-- mobile nav-->
             <a id="bars" href="javascript:void(0);" class="bars">
                 <img style="width: 50px;" src="./Resources/bars.png">
             </a>
         </div>
-        <div class="mobile-nav">
+        <div id="mobileNavBar" class="mobile-nav">
             <a class="navLink mobNavLink" href="index.html#welcome" target="_self">Home</a>
             <hr class="mobNavSeperator">
             <a class="navLink mobNavLink" href="index.html#projectsPage" target="_self">Projects</a>
@@ -51,50 +51,65 @@
             <hr class="mobNavSeperator">
             <a class="navLink mobNavLink" href="./Resources/Resume.pdf" target="_blank">Resume</a>
             <hr class="mobNavSeperator">
-            <a class="navLink mobNavLink" href="./aboutme.html" target="_self">About me</a>
-            <hr class="mobNavSeperator">
+            <!-- </ <a class= "navLink mobNavLink" href="./aboutme.html"  target="_self">About me</a>
+	 <hr class="mobNavSeperator"> -->
         </div>
+
         <script type="text/javascript" src="mobMenu.js"></script>
     </nav>
     <div class="container">
         <article style="padding-top: 80px;">
             <h1>Time Game</h1>
             <hr>
-            <h2>The goal</h2>
-            <p>Creating a game where Time Manipulation stands central. Specifically manipulating time on specific
-                objects.
-                We'd like to find a way to use this mechanic in a Player vs Player way. 
-            </p>
+            <h2>The Goal</h2>
+            <p>Developing a game centered around <strong>Time Manipulation</strong>, transforming this concept into a puzzle-solving adventure akin to games like Portal. The idea was to manipulate time for specific objects to solve intricate puzzles.</p>
             <hr>
-            <h2>The process</h2>
-            <p>I first got the idea after watching the movie Tenet for the second time. Wouldn't it be cool to
-                manipulate objects in time and actually use that in a combat style way?
-                So I started with the initial concept. Reverting an object in motion. Time Data had to be gathered,
-                which is the position, the rotation and the velocity of an object.
-                This data was then recorded on every object that was considered a time object. After that, you as the
-                user would look at the object, press a button and it would revert!
-                See the gifs below for some examples of that.
-            </p>
-            <div class="image-container">
-                <img width="49%" src="./Resources/TimeGame/rewind_1.gif" alt="Sorry could not load image.">
-                <img width="49%" src="./Resources/TimeGame/rewind_2.gif" alt="Sorry could not load image.">
-                <img width="49%" src="./Resources/TimeGame/rewind_3.gif" alt="Sorry could not load image.">
+            <h2>The Process</h2>
+            <p>Inspired by the movie <em>Tenet</em>, the concept revolves around reversing the motion of objects. This involved gathering time data (position, rotation, velocity) for objects and enabling their reversal in time upon user interaction. Check out the initial experiments below:</p>
+            <div class="image-container" >
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/rewind_1.gif" alt="Time Reversal Experiment">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/rewind_2.gif" alt="Object Reversal Demo">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/rewind_3.gif" alt="Reversing Objects in Motion">
+                <p style="text-align: center;"><i>First experiments with reversing objects in motion</i></p>
             </div>
             <hr>
-            <h2>My job and take aways</h2>
-            <p>I'm working on the main mechanic, namely the manipulation of time on objects. Then pouring this mechanic into a gun that controls this.
-                Next to that I'm working on making guns that can also be fired and its projectiles be time manipulated as well.
-            </p>
-            <p>
-                Aside from that, taking part of the game design through brainstorms, dicussions, testing sessions, etc, ...
-            </p>
+            <p>Expanding on this, we applied the mechanic to more physics-based objects, exploring different interactions:</p>
+            <div class="image-container" style="text-align: center;">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/PausePallets.gif" alt="Pausing Physics Objects">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/ReversePallets.gif" alt="Reversing Physics Objects">
+                
+            </div>
+           
+            <div style="text-align: center;">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/PlatformerPause.gif" alt="Platformer Pause Mechanic">
+                <p style="text-align: center;">Integrating the mechanic with throwing actions and physics interactions.</p>
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/Lift.gif" alt="Time-Based Lift Mechanic">
+                <p style="text-align: center;">Utilizing time reversal to create innovative gameplay elements like lifts:</p>
+            </div>
+            <hr>
+            <h2>My Role and Insights</h2>
+            <p>As the lead on the time manipulation mechanic, I focused on integrating this core concept into various gameplay elements, including weaponry and object interactions. This role also involved contributing to game design through brainstorming sessions, discussions, and testing.</p>
         </article>
     </div>
     <!-- Footer -->
     <div class="footer">
-        <h4 style="font-family: Arial; color: grey; text-decoration: none; padding-left: 40px;">&copy; 2024 by Ben
-            Gladiné</h4>
+        <h4
+            style="font-size: small; width: 20%; font-family: Montserrat; color: rgb(0, 0, 0); text-decoration: none; padding-left: 40px;">
+            Developed by Ben Gladiné | 2024<br>
+            <hr>Inspired by Joeb Rogers
+        </h4>
     </div>
+
+    <!-- Modal -->
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <i id='rightArrow' class="arrow right"></i>
+            <i id='leftArrow' class="arrow left"></i>
+            <span class="closeBtn">&times;</span>
+            <img style="width: 100%;" src="" id="modalImage">
+        </div>
+    </div>
+    <script src="imageViewer.js"></script>
 </body>
 
 </html>
