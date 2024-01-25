@@ -18,31 +18,31 @@
 <body>
     <!-- navBar -->
     <nav>
-        <div class="nav">
+        <div id="navBar" class="nav">
             <!-- pc container -->
             <div class="pcContainer">
                 <!-- home and other links(icons) -->
                 <div class="homeContainer">
-                    <a class="navLink" href="index.html#welcome" target="_self"><b>Ben Gladiné</b></a>
+                    <a class="navLink" href="index.html#welcome" target="_self">HOME</a>
                     <a href="mailto:gladine.ben@gmail.com"><img class="hoverImage icon"
-                            style="background: #1A4C50 ;max-width: 50px; float: right;" src="./Resources/mail.png"></a>
+                            style="max-width: 50px; float: right;" src="./Resources/mail.png"></a>
                     <a href="http://www.linkedin.com/in/bengladine" target="_blank"><img class="hoverImage icon"
-                            style="background: #1A4C50 ;max-width: 50px; float: right;"
-                            src="./Resources/linkedin.png"></a>
+                            style="max-width: 50px; float: right;" src="./Resources/linkedin.png"></a>
                 </div>
 
                 <!-- pcNavMenu -->
                 <a class="navLink pcNavMenu" href="index.html#projectsPage">PROJECTS</a>
                 <a class="navLink pcNavMenu" href="index.html#skills" target="_self">SKILLS</a>
                 <a class="navLink pcNavMenu" href="./Resources/Resume.pdf" target="_blank">RESUME</a>
-                <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a>
+                <!-- <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a> -->
+
             </div>
             <!-- mobile nav-->
             <a id="bars" href="javascript:void(0);" class="bars">
                 <img style="width: 50px;" src="./Resources/bars.png">
             </a>
         </div>
-        <div class="mobile-nav">
+        <div id="mobileNavBar" class="mobile-nav">
             <a class="navLink mobNavLink" href="index.html#welcome" target="_self">Home</a>
             <hr class="mobNavSeperator">
             <a class="navLink mobNavLink" href="index.html#projectsPage" target="_self">Projects</a>
@@ -51,9 +51,10 @@
             <hr class="mobNavSeperator">
             <a class="navLink mobNavLink" href="./Resources/Resume.pdf" target="_blank">Resume</a>
             <hr class="mobNavSeperator">
-            <a class="navLink mobNavLink" href="./aboutme.html" target="_self">About me</a>
-            <hr class="mobNavSeperator">
+            <!-- </ <a class= "navLink mobNavLink" href="./aboutme.html"  target="_self">About me</a>
+	 <hr class="mobNavSeperator"> -->
         </div>
+
         <script type="text/javascript" src="mobMenu.js"></script>
     </nav>
     <div class="container">
@@ -63,7 +64,7 @@
             <h2>The goal</h2>
             <p>Creating a game where Time Manipulation stands central. Specifically manipulating time on specific
                 objects.
-                We'd like to find a way to use this mechanic in a Player vs Player way. 
+                We'd like to find a way to use this mechanic in a Player vs Player way.
             </p>
             <hr>
             <h2>The process</h2>
@@ -76,25 +77,42 @@
                 See the gifs below for some examples of that.
             </p>
             <div class="image-container">
-                <img width="49%" src="./Resources/TimeGame/rewind_1.gif" alt="Sorry could not load image.">
-                <img width="49%" src="./Resources/TimeGame/rewind_2.gif" alt="Sorry could not load image.">
-                <img width="49%" src="./Resources/TimeGame/rewind_3.gif" alt="Sorry could not load image.">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/rewind_1.gif" alt="Sorry could not load image.">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/rewind_2.gif" alt="Sorry could not load image.">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/rewind_3.gif" alt="Sorry could not load image.">
             </div>
             <hr>
             <h2>My job and take aways</h2>
-            <p>I'm working on the main mechanic, namely the manipulation of time on objects. Then pouring this mechanic into a gun that controls this.
-                Next to that I'm working on making guns that can also be fired and its projectiles be time manipulated as well.
+            <p>I'm working on the main mechanic, namely the manipulation of time on objects. Then pouring this mechanic
+                into a gun that controls this.
+                Next to that I'm working on making guns that can also be fired and its projectiles be time manipulated
+                as well.
             </p>
             <p>
-                Aside from that, taking part of the game design through brainstorms, dicussions, testing sessions, etc, ...
+                Aside from that, taking part of the game design through brainstorms, dicussions, testing sessions, etc,
+                ...
             </p>
         </article>
     </div>
     <!-- Footer -->
     <div class="footer">
-        <h4 style="font-family: Arial; color: grey; text-decoration: none; padding-left: 40px;">&copy; 2024 by Ben
-            Gladiné</h4>
+        <h4
+            style="font-size: small; width: 20%; font-family: Montserrat; color: rgb(0, 0, 0); text-decoration: none; padding-left: 40px;">
+            Developed by Ben Gladiné | 2024<br>
+            <hr>Inspired by Joeb Rogers
+        </h4>
     </div>
+
+    <!-- Modal -->
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <i id='rightArrow' class="arrow right"></i>
+            <i id='leftArrow' class="arrow left"></i>
+            <span class="closeBtn">&times;</span>
+            <img style="width: 100%;" src="" id="modalImage">
+        </div>
+    </div>
+    <script src="imageViewer.js"></script>
 </body>
 
 </html>
