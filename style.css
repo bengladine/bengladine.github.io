@@ -6,72 +6,75 @@
 */
 
 /* cheatsheat: jonibologna.com/content/images/flexboxsheet.pdf */
-:root
-{
-  background-color:whitesmoke;
+:root {
+  background-color: whitesmoke;
   color: #252525;
 }
 
-:root h1,h2,h3,h4, a{
+:root h1,
+h2,
+h3,
+h4,
+a {
   font-family: "Montserrat";
   color: #161616;
 }
 
-:root h1, h2{
+:root h1,
+h2 {
   text-shadow: 2px 1px 1px #919191;
   color: #161616;
 }
 
-:root p{
+:root p {
   font-family: "Montserrat";
 }
 
-body{
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-.tab{
+.tab {
   font-size: 64px;
   text-align: center;
   color: #eceee3;
 }
 
-.titleLine{
- border: 0;
- clear:both;
- display:block;
- width: 96%;
- background-color: #eceee3;
- height: 1px;
+.titleLine {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: #eceee3;
+  height: 1px;
 }
 
-.container
-{
+.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   max-width: 100%;
 }
 
-.video{
+.video {
   max-width: 90%;
 }
 
-.imageContainer{
+.imageContainer {
   max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -79,64 +82,61 @@ body{
   padding: 10px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.links
-{
-  color:rgb(255, 166, 0);
+.links {
+  color: rgb(255, 166, 0);
 }
 
-.image
-{
+.image {
   max-width: 80%;
 }
 
-.projectSection{
+.projectSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   max-width: 1100px;
   padding: 10px;
   border-radius: 10%;
   border: 2px solid #417571;
 }
 
-.project
-{
+.project {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   margin: 0px 5% 10px 5%;
   max-width: 300px;
@@ -144,10 +144,14 @@ body{
 
 .projectSection .project ul {
   text-align: left;
-  list-style-type: disc; /* or your preferred list style */
-  padding-left: 20px; /* Adjust as needed */
-  margin-left: 10; /* Ensures the list starts at the edge of the container */
-  display: block; /* Resets any flex or inline styles */
+  list-style-type: disc;
+  /* or your preferred list style */
+  padding-left: 20px;
+  /* Adjust as needed */
+  margin-left: 10;
+  /* Ensures the list starts at the edge of the container */
+  display: block;
+  /* Resets any flex or inline styles */
   width: 100%;
 }
 
@@ -157,24 +161,24 @@ body{
   padding-bottom: 3px;
   font-size: medium;
   font-family: "Montserrat";
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
-ul{
+ul {
   text-align: left;
   font-size: 20px;
   margin-left: 0px;
   padding-bottom: 3px;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
-.projectSection .project li{
+.projectSection .project li {
   margin-right: 30px;
 }
 
 
 
-.projectSection .project .listing{
+.projectSection .project .listing {
   width: 50%;
   margin-left: 5px;
   margin-right: 5px;
@@ -183,11 +187,11 @@ ul{
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
-  text-wrap:balance;
+  text-wrap: balance;
   overflow: hidden;
 }
 
-.projectSection .project .listing b{
+.projectSection .project .listing b {
   color: white;
   margin-bottom: 10px;
   padding-top: 5px;
@@ -199,100 +203,98 @@ ul{
   border-top: 0;
   border-width: 2px;
   width: 100%;
-  float:left;
-  background-color:#184A45;
+  float: left;
+  background-color: #184A45;
   overflow: hidden;
 }
 
-.projectSection .project p{
+.projectSection .project p {
   color: #272727;
   font-style: italic;
   font-family: "Montserrat";
   font: bold;
 }
 
-.recordingBox
-{
+.recordingBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 20px;
   max-width: 100%;
 }
 
-.hoverImage{
-  -webkit-transition:  0.5s;
-  -o-transition:  0.5s;
-  transition:  0.5s;
+.hoverImage {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
   transform: scale(1);
   max-width: 100%;
 }
 
-.projectImage{
+.projectImage {
   border-radius: 5%;
   border: 3px dotted #1A4C50;
   max-height: 300px;
 }
 
-.projectImage:hover{
+.projectImage:hover {
   border-radius: 30%;
 }
 
-.hoverImage:hover{
+.hoverImage:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.galleryImage
-{
+.galleryImage {
   text-align: center;
   max-width: 40%;
 
   border-radius: 10%;
 }
 
-audio{
+audio {
   display: block;
   max-width: 100%;
 }
 
-p{
+p {
   text-align: left;
   font-size: 20px;
 }
 
-h2{
+h2 {
   font-size: 26px;
   text-align: left;
 }
 
-h1{
+h1 {
   font-size: 32px;
 }
 
 
 
-article{
-   max-width: 900px;
+article {
+  max-width: 900px;
 }
 
-article h2{
+article h2 {
   font-size: 26px;
   text-align: left;
 }
 
-article ol{
+article ol {
   text-align: left;
   font-size: 18px;
 }
 
-article p{
+article p {
   font-size: 20px;
 }
 
@@ -303,147 +305,153 @@ article p{
   overflow: hidden;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      margin-left: 5%;
+  flex-wrap: wrap;
+  margin-left: 5%;
   margin-top: 100px;
   margin-bottom: 100px;
   line-height: 1.6;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content:flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-          
+  -ms-flex-align: center;
+  align-items: center;
+
 
 }
 
 #welcomeImageContainer {
   float: left;
   max-width: 30%;
-  padding: 25px; /* This padding will act as the space around your image */
+  padding: 25px;
+  /* This padding will act as the space around your image */
   shape-outside: circle(50%);
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100%; /* You might need to adjust this */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100%;
+  /* You might need to adjust this */
 }
 
-#welcomeImage{
+#welcomeImage {
   width: 100%;
   border-radius: 50%;
   border: 5px double #000000;
 }
 
-#welcomeMessage{
+#welcomeMessage {
   max-width: 100%;
   text-align: left;
 }
 
-#welcomeMessage p{
+#welcomeMessage p {
   font-size: 20px;
 }
 
-#projectsSection .galleryImage{
+#projectsSection .galleryImage {
   max-width: 70%;
 }
-#projectsPage h2{
+
+#projectsPage h2 {
   text-align: center;
 }
 
 
-#skills{
+#skills {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding-bottom: 30px;
 
 }
-#skillsTab{
+
+#skillsTab {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   max-width: 100%;
   min-width: 40%;
   text-align: center;
 }
 
-#skillsTab h3{
+#skillsTab h3 {
   text-align: center;
 }
 
-#skillsTab h4{
+#skillsTab h4 {
   margin: 5px;
   font-size: 20px;
   max-width: 100%;
 }
 
-#setSkills{
+#setSkills {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   max-width: 100%;
   text-align: center;
 }
 
-.skillResult{
+.skillResult {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.modal{
+.modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -455,37 +463,37 @@ article p{
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.modal-content{
+.modal-content {
   display: inline-block;
   padding: 20px;
   max-width: 1200px;
   -webkit-animation-name: modalOpen;
-          animation-name: modalOpen;
-  -webkit-animation-duration:0.7s;
-          animation-duration:0.7s;
+  animation-name: modalOpen;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
 }
 
-.closeBtn
-{
-  color:#ccc;
+.closeBtn {
+  color: #ccc;
   float: right;
   font-size: 30px;
 }
 
-.closeBtn:hover,.closeBtn:focus{
+.closeBtn:hover,
+.closeBtn:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
-.arrow{
+.arrow {
   border: solid white;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -493,65 +501,86 @@ article p{
   transform: scale(2);
 }
 
-.arrow:hover,.arrow:focus{
-  color: rgb(150,150,150);
+.arrow:hover,
+.arrow:focus {
+  color: rgb(150, 150, 150);
   text-decoration: none;
   cursor: pointer;
 }
 
-.right{
+.right {
   position: absolute;
   top: 50%;
   right: 10%;
   -ms-transform: rotate(-45deg);
-      transform: rotate(-45deg);
+  transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
 
-.left{
+.left {
   position: absolute;
   top: 50%;
   right: 90%;
   -ms-transform: rotate(135deg);
-      transform: rotate(135deg);
+  transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
 
-@-webkit-keyframes modalOpen{
-  from{opacity: 0}
-  to {opacity: 1}
+@-webkit-keyframes modalOpen {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
-@keyframes modalOpen{
-  from{opacity: 0}
-  to {opacity: 1}
+@keyframes modalOpen {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
-@-webkit-keyframes modalClose{
-  from{opacity: 1}
-  to {opacity: 0}
+@-webkit-keyframes modalClose {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0
+  }
 }
 
-@keyframes modalClose{
-  from{opacity: 1}
-  to {opacity: 0}
+@keyframes modalClose {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0
+  }
 }
 
-.contactContainer{
+.contactContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
-.footer{
+.footer {
   position: absolute;
   width: 100%;
   padding: 10px 0px 10px 0px;
@@ -563,18 +592,20 @@ article p{
   background: whitesmoke;
 }
 
-pre code{
-    text-align: left;
-    background-color: #2d3e43;
-    border: 1px solid #999;
-    display: block;
-    padding-left: 20px;
-    max-width: 50%;
+pre{
+  position: relative;
+  background: #d3d6db;
+  padding: 10px;
+  font-size: 15px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  border: 1px solid #e6e7e9;
+  text-align: left;
 }
 
-.scrollBox{
-    width: calc(100vw - 80px);
-    max-width: 100%;
-    height: 300px;
-    overflow: auto;
+.scrollBox {
+  width: calc(100vw - 80px);
+  max-width: 100%;
+  height: 300px;
+  overflow: auto;
 }

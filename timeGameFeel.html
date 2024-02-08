@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Time Game</title>
+    <link rel="shortcut icon" href="profilePhoto.ico" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="This is Ben Gladiné's portfolio." />
+    <meta name="author" content="Ben Gladiné" />
+    <meta name="keywords" content="Portfolio, game developer, programmer" />
+    <meta name="viewport" content="width = device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navBar.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+<body>
+    <!-- navBar -->
+    <nav>
+        <div id="navBar" class="nav">
+            <!-- pc container -->
+            <div class="pcContainer">
+                <!-- home and other links(icons) -->
+                <div class="homeContainer">
+                    <a class="navLink" href="index.html#welcome" target="_self">HOME</a>
+                    <a href="mailto:gladine.ben@gmail.com"><img class="hoverImage icon"
+                            style="max-width: 50px; float: right;" src="./Resources/mail.png"></a>
+                    <a href="http://www.linkedin.com/in/bengladine" target="_blank"><img class="hoverImage icon"
+                            style="max-width: 50px; float: right;" src="./Resources/linkedin.png"></a>
+                </div>
+
+                <!-- pcNavMenu -->
+                <a class="navLink pcNavMenu" href="index.html#projectsPage">PROJECTS</a>
+                <a class="navLink pcNavMenu" href="index.html#skills" target="_self">SKILLS</a>
+                <a class="navLink pcNavMenu" href="./Resources/Resume.pdf" target="_blank">RESUME</a>
+                <!-- <a class="navLink pcNavMenu" href="aboutme.html" target="_self">ABOUT ME</a> -->
+
+            </div>
+            <!-- mobile nav-->
+            <a id="bars" href="javascript:void(0);" class="bars">
+                <img style="width: 50px;" src="./Resources/bars.png">
+            </a>
+        </div>
+        <div id="mobileNavBar" class="mobile-nav">
+            <a class="navLink mobNavLink" href="index.html#welcome" target="_self">Home</a>
+            <hr class="mobNavSeperator">
+            <a class="navLink mobNavLink" href="index.html#projectsPage" target="_self">Projects</a>
+            <hr class="mobNavSeperator">
+            <a class="navLink mobNavLink" href="index.html#skills" target="_self">Skills</a>
+            <hr class="mobNavSeperator">
+            <a class="navLink mobNavLink" href="./Resources/Resume.pdf" target="_blank">Resume</a>
+            <hr class="mobNavSeperator">
+            <!-- </ <a class= "navLink mobNavLink" href="./aboutme.html"  target="_self">About me</a>
+	 <hr class="mobNavSeperator"> -->
+        </div>
+
+        <script type="text/javascript" src="mobMenu.js"></script>
+    </nav>
+    <div class="container">
+        <article style="padding-top: 80px;">
+            <h1>Time Game, Game Feel Addition</h1>
+            <hr>
+            <h2>The Goal</h2>
+            <p>Add extra punch to the 'gravity gun' shooting mechanic. </p>
+            <hr>
+            <h2>The Process</h2>
+            <p>As a small game feel task, I decided to go with the already existing shooting mechanic, where the player
+                can select an object and propell it towards a target. </p>
+            <div class="image-container">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/fire.gif"
+                    alt="Fire without feel">
+                <p style="text-align: center;"><i>How the shooting mechanic was</i></p>
+            </div>
+            <p>The player, selects the object with the press of a button, holds another button and charges up the gun.
+                The gun then propells the selected object
+                forward with a power, determined by the player.
+                <br><br>
+                To make it feel more beefier, I decided to focus on five simple things:
+            <ul>
+                <li><b>Fire power indicator</b>, indicating how long the player has hold the charging button</li>
+                <li><b>A shaking effect on the selected object</b> while charging, increasingly making it shake heavier
+                    the longer you hold the charge button.</li>
+                <li><b>Adding beams connecting the gun and the selected object</b>, and adding an effect on those beams
+                    while charging</li>
+                <li><b>Another shaking effect on the gun</b> + a <b>knockback on the gun</b> after firing.</li>
+                <li><b>Some simple particles</b> spawning after firing</li>
+            </ul>
+            </p>
+            <h2>The Result</h2>
+            <div class="image-container">
+                <img width="49%" class="hoverImage galleryImage" src="./Resources/TimeGame/fireWithFeel.gif"
+                    alt="Fire with feel">
+                <p style="text-align: center;"><i>The shooting mechanic after</i></p>
+            </div>
+            <div class="container">
+                <pre>float chargingBoostShakingFactor = _chargingFireBoost / _maxChargingFireBoost;<br><br>Quaternion addedRotation = Quaternion.Euler(0.0f, 0.0f, Mathf.Sin(((Time.time / 3.14f * 180.0f))) * _shakingIntensity * chargingBoostShakingFactor);<br><br>_selectedObject.Rigidbody.rotation *= addedRotation;</pre>
+                <p style="text-align: center;"><i>Code for shaking the gun and selected object</i></p>
+            </div>
+            <div class="container">
+                <pre>
+// Skipping the first and last key point of the animation curve
+for (int i = 1; i < pointsCount  - 1 ; i++) <br>{    
+    float timeMovement = Time.deltaTime * _chargeSpeed * _chargeSpeedFactor;
+    _keys[i].time += timeMovement;
+                    
+    if (_keys[i].time > 1f)
+    {
+    //Reset the point to the start
+    _keys[i].time = 0.0f;
+                    
+    // alternate between minWidth and maxWidth of the lineRenderer
+    _keys[i].value = _keys[i].value >= maxWidth ? _minWidth : _maxWidth;
+    }
+}
+                    
+_widthCurve.keys = _keys;
+_lineRenderer.widthCurve = _widthCurve;</pre>
+                    <p style="text-align: center;"><i>Code for beams charging</i></p>
+            </div>
+            <h2>Further additions</h2>
+            <ul>
+                <li>A small shake on the gun while grabbing an object</li>
+                <li>Sounds when firing the object</li>
+                <li>Changing the last indicator to red when the max charging has been reached</li>
+            </ul>
+            <hr>
+        </article>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <h4
+            style="font-size: small; width: 20%; font-family: Montserrat; color: rgb(0, 0, 0); text-decoration: none; padding-left: 40px;">
+            Developed by Ben Gladiné | 2024<br>
+            <hr>Inspired by Joeb Rogers
+        </h4>
+    </div>
+
+    <!-- Modal -->
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <i id='rightArrow' class="arrow right"></i>
+            <i id='leftArrow' class="arrow left"></i>
+            <span class="closeBtn">&times;</span>
+            <img style="width: 100%;" src="" id="modalImage">
+        </div>
+    </div>
+    <script src="imageViewer.js"></script>
+</body>
+
+</html>
