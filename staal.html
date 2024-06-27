@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            margin-top: 50px;
+            text-align: center;
+        }
+        header img {
+            max-width: 200px;
+            height: auto;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 30px;
+        }
+        .spotify-embed {
+            width: 45%;
+            height: 352px;
+            border-radius: 12px;
+            border: none;
+        }
+        .social-links {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+        }
+        .social-links img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./Resources/staal.png" alt="Band Logo">
+    </header>
+    <div class="content">
+        <iframe class="spotify-embed" src="https://open.spotify.com/embed/artist/42Y5DW6VGKidYA4BdRZQfB?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="social-links">
+            <a href="https://open.spotify.com/artist/42Y5DW6VGKidYA4BdRZQfB?si=Y7OT1AtPSrSZWov59cl5Xw" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
+            </a>
+            <a href="https://www.instagram.com/57441band?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a href="mailto:57441.band@gmail.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Mail_ValeJappo.png" alt="Email">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
